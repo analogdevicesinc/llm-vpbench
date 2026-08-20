@@ -1,0 +1,140 @@
+{
+  "name": "noc-router",
+  "category": "network-on-chip",
+  "complexity": "high",
+  "interface_type": "tlm",
+  "expected_files": [
+    "noc_router.h",
+    "noc_arbiter.h",
+    "noc_cache.h"
+  ],
+  "testbench": "testbench/noc_router_testbench.cpp",
+  "spec": "spec/noc-router-spec.md",
+  "golden_dir": "golden",
+  "module_names": [
+    "noc_router",
+    "noc_arbiter",
+    "noc_route_cache",
+    "noc_data_cache"
+  ],
+  "executable_name": "noc_router_tb",
+  "static_checks": {
+    "structural": [],
+    "quality": [],
+    "security": [],
+    "security_test_map": {
+      "bounds_check": [
+        "CP-TMO-01",
+        "CP-TMO-02",
+        "CP-TMO-03",
+        "CP-TMO-04"
+      ],
+      "buffer_overflow": [
+        "CP-STRESS-01",
+        "CP-STRESS-03",
+        "CP-STRESS-09"
+      ],
+      "null_ptr_check": [
+        "CP-NB-03",
+        "CP-NB-04",
+        "CP-NB-05",
+        "CP-NB-06"
+      ]
+    }
+  },
+  "spec_compliance": {
+    "expected_registers": [
+      "CTRL",
+      "STATUS",
+      "ROUTE_TABLE",
+      "ARB_MODE",
+      "QOS_CTRL",
+      "TIMEOUT_CFG",
+      "IRQ_ENABLE",
+      "IRQ_STATUS",
+      "CACHE_CTRL"
+    ],
+    "expected_ports": [
+      "tgt_socket",
+      "init_socket",
+      "irq_out"
+    ],
+    "expected_interrupts": 1,
+    "register_test_map": {
+      "CTRL": [
+        "FN-RST-01",
+        "FN-RST-02",
+        "FN-RST-03",
+        "FN-RST-04",
+        "FN-RST-05"
+      ],
+      "STATUS": [
+        "FN-STAT-01",
+        "FN-STAT-02",
+        "FN-STAT-03",
+        "FN-STAT-04"
+      ],
+      "ROUTE_TABLE": [
+        "FN-ROUTE-17",
+        "FN-ROUTE-18",
+        "FN-ROUTE-19",
+        "FN-ROUTE-20"
+      ],
+      "ARB_MODE": [
+        "FN-ARB-01",
+        "FN-ARB-02",
+        "FN-ARB-03",
+        "FN-ARB-04"
+      ],
+      "QOS_CTRL": [
+        "FN-QOS-01",
+        "FN-QOS-02",
+        "FN-QOS-03",
+        "FN-QOS-04"
+      ],
+      "TIMEOUT_CFG": [
+        "FN-TMO-01",
+        "FN-TMO-02",
+        "FN-TMO-03",
+        "FN-TMO-04"
+      ],
+      "IRQ_ENABLE": [
+        "IR-IRQ-01",
+        "IR-IRQ-02",
+        "IR-IRQ-03",
+        "IR-IRQ-04"
+      ],
+      "IRQ_STATUS": [
+        "IR-IRQ-05",
+        "IR-IRQ-06",
+        "IR-IRQ-07",
+        "IR-IRQ-08"
+      ],
+      "CACHE_CTRL": [
+        "FN-RCACHE-01",
+        "FN-RCACHE-02",
+        "FN-RCACHE-03",
+        "FN-RCACHE-04"
+      ]
+    },
+    "security_test_map": {
+      "bounds_check": [
+        "CP-TMO-01",
+        "CP-TMO-02",
+        "CP-TMO-03",
+        "CP-TMO-04"
+      ],
+      "buffer_overflow": [
+        "CP-STRESS-01",
+        "CP-STRESS-03",
+        "CP-STRESS-09"
+      ],
+      "null_ptr_check": [
+        "CP-NB-03",
+        "CP-NB-04",
+        "CP-NB-05",
+        "CP-NB-06"
+      ]
+    }
+  }
+}

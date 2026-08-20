@@ -1,0 +1,100 @@
+{
+  "name": "plic",
+  "category": "interrupt-controller",
+  "complexity": "medium",
+  "interface_type": "tlm",
+  "expected_files": [
+    "plic.h"
+  ],
+  "testbench": "testbench/plic_testbench.cpp",
+  "spec": "spec/plic-spec.md",
+  "golden_dir": "golden",
+  "module_names": [
+    "plic"
+  ],
+  "executable_name": "plic_testbench",
+  "static_checks": {
+    "structural": [],
+    "quality": [],
+    "security": [],
+    "security_test_map": {
+      "bounds_check": [
+        "T5.1"
+      ],
+      "buffer_overflow": [
+        "T5.1"
+      ],
+      "null_ptr_check": [
+        "T8.1"
+      ]
+    }
+  },
+  "spec_compliance": {
+    "expected_registers": [
+      "priority",
+      "pending",
+      "enable",
+      "threshold",
+      "claim_complete",
+      "int_type"
+    ],
+    "expected_ports": [
+      "tgt_socket",
+      "irq_sources",
+      "irq_out"
+    ],
+    "expected_interrupts": 4,
+    "register_test_map": {
+      "priority": [
+        "FN-PRIO-01",
+        "FN-PRIO-02",
+        "FN-PRIO-03",
+        "FN-PRIO-04",
+        "FN-PRIO-05"
+      ],
+      "pending": [
+        "FN-PEND-01",
+        "FN-PEND-02",
+        "FN-PEND-03",
+        "FN-PEND-04"
+      ],
+      "enable": [
+        "FN-EN-01",
+        "FN-EN-02",
+        "FN-EN-03",
+        "FN-EN-04"
+      ],
+      "threshold": [
+        "FN-THRESH-01",
+        "FN-THRESH-02",
+        "FN-THRESH-03",
+        "FN-THRESH-04"
+      ],
+      "claim_complete": [
+        "FN-CLAIM-01",
+        "FN-CLAIM-02",
+        "FN-CLAIM-03",
+        "FN-CLAIM-04",
+        "FN-CLAIM-05",
+        "FN-CLAIM-06"
+      ],
+      "int_type": [
+        "FN-TYPE-01",
+        "FN-TYPE-02",
+        "FN-TYPE-03",
+        "FN-TYPE-04"
+      ]
+    },
+    "security_test_map": {
+      "bounds_check": [
+        "T5.1"
+      ],
+      "buffer_overflow": [
+        "T5.1"
+      ],
+      "null_ptr_check": [
+        "T8.1"
+      ]
+    }
+  }
+}

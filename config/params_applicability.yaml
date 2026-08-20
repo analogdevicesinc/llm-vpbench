@@ -1,0 +1,46 @@
+# Parameter Applicability Matrix
+# Defines which of the 32 params apply to each submission type
+
+submission_types:
+  target_only: [risc-v-aclint, plic]
+  initiator_target: [dma]
+  interconnect: [noc-router, axi4-interconnect]
+
+parameters:
+  P1:  { applies_to: all }
+  P2:  { applies_to: all }
+  P3:  { applies_to: all }
+  P4:  { applies_to: all }
+  P5:  { applies_to: all }
+  P6:  { applies_to: all }
+  P7:  { applies_to: all }
+  P8:  { applies_to: all }
+  P9:  { applies_to: all }
+  P10: { applies_to: all }
+  P11: { applies_to: [target_only, initiator_target], reason: "DMI is target-side feature" }
+  P12: { applies_to: [initiator_target], reason: "Temporal decoupling is initiator-side (quantum keeper)" }
+  P13: { applies_to: all }
+  P14: { applies_to: [initiator_target], reason: "Streaming width is optional; spec must explicitly require" }
+  P15: { applies_to: [initiator_target], reason: "TLM extensions are optional advanced feature" }
+  P16: { applies_to: all }
+  P17: { applies_to: all }
+  P18: { applies_to: all }
+  P19: { applies_to: all }
+  P20: { applies_to: all }
+  P21: { applies_to: all }
+  P22: { applies_to: all }
+  P23: { applies_to: all }
+  P24: { applies_to: all }
+  P25: { applies_to: all }
+  P26: { applies_to: all }
+  P27: { applies_to: all }
+  P28: { applies_to: all }
+  P29: { applies_to: all }
+  P30: { applies_to: all, env_requires: "SYSTEMC_ASAN_HOME" }
+  P31: { applies_to: all }
+  P32: { applies_to: all }
+
+# N/A rationale for paper:
+# - P12 (temporal decoupling): Only initiators use tlm_quantumkeeper. Targets respond synchronously.
+# - P14 (streaming width): IEEE 1666-2023 §11.1.1.4 - informational attribute, target may ignore.
+# - P15 (extensions): Optional TLM feature, only required if spec demands it.

@@ -1,0 +1,66 @@
+{
+  "name": "axi4-interconnect",
+  "category": "bus-interconnect",
+  "complexity": "high",
+  "interface_type": "tlm",
+  "expected_files": [
+    "axi4_interconnect.h"
+  ],
+  "testbench": "testbench/axi4_interconnect_testbench.cpp",
+  "spec": "spec/axi4-interconnect-spec.md",
+  "golden_dir": "golden",
+  "module_names": [
+    "axi4_interconnect"
+  ],
+  "executable_name": "axi4_interconnect_tb",
+  "static_checks": {
+    "structural": [],
+    "quality": [],
+    "security": [],
+    "security_test_map": {
+      "bounds_check": [
+        "T3.1",
+        "T3.2",
+        "T3.3",
+        "T3.4",
+        "T3.5",
+        "T3.6"
+      ],
+      "buffer_overflow": [
+        "T3.1",
+        "T3.2"
+      ],
+      "null_ptr_check": [
+        "T3.5",
+        "T3.6"
+      ]
+    }
+  },
+  "spec_compliance": {
+    "expected_registers": [],
+    "expected_ports": [
+      "tgt_socket",
+      "init_socket"
+    ],
+    "expected_interrupts": 0,
+    "register_test_map": {},
+    "security_test_map": {
+      "bounds_check": [
+        "T3.1",
+        "T3.2",
+        "T3.3",
+        "T3.4",
+        "T3.5",
+        "T3.6"
+      ],
+      "buffer_overflow": [
+        "T3.1",
+        "T3.2"
+      ],
+      "null_ptr_check": [
+        "T3.5",
+        "T3.6"
+      ]
+    }
+  }
+}

@@ -1,0 +1,128 @@
+{
+  "name": "dma",
+  "category": "dma-controller",
+  "complexity": "high",
+  "interface_type": "tlm",
+  "expected_files": [
+    "dma_controller.h"
+  ],
+  "testbench": "testbench/dma_testbench.cpp",
+  "spec": "spec/dma-spec.md",
+  "golden_dir": "golden",
+  "module_names": [
+    "dma_controller"
+  ],
+  "executable_name": "dma_testbench",
+  "static_checks": {
+    "structural": [],
+    "quality": [],
+    "security": [],
+    "security_test_map": {
+      "bounds_check": [
+        "T2_3: Gap 0x018",
+        "T2_4: Gap 0x080",
+        "T2_5: Beyond 0x200",
+        "T2_6: Misaligned 0x001"
+      ],
+      "buffer_overflow": [
+        "T5_1: SIZE=0 ERROR",
+        "T5_3: SIZE%width ERROR"
+      ],
+      "null_ptr_check": [
+        "T21_1a: streaming_width\u2260data_length error"
+      ]
+    }
+  },
+  "spec_compliance": {
+    "expected_registers": [
+      "GLOBAL_CTRL",
+      "STATUS",
+      "VERSION",
+      "INT_STATUS",
+      "INT_MASK",
+      "INT_CLEAR",
+      "CH_SRC",
+      "CH_DST",
+      "CH_SIZE",
+      "CH_CTRL",
+      "CH_CONFIG",
+      "CH_STATUS"
+    ],
+    "expected_ports": [
+      "tgt_socket",
+      "init_socket",
+      "irq",
+      "irq_global"
+    ],
+    "expected_interrupts": 5,
+    "register_test_map": {
+      "GLOBAL_CTRL": [
+        "FN-CTRL-01",
+        "FN-CTRL-02",
+        "FN-CTRL-03"
+      ],
+      "STATUS": [
+        "FN-REG-01",
+        "FN-REG-02",
+        "FN-REG-03"
+      ],
+      "VERSION": [
+        "FN-REG-04",
+        "FN-REG-05"
+      ],
+      "INT_STATUS": [
+        "FN-REG-06",
+        "FN-REG-07"
+      ],
+      "INT_MASK": [
+        "FN-REG-08",
+        "FN-REG-09"
+      ],
+      "INT_CLEAR": [
+        "FN-REG-10",
+        "FN-REG-11"
+      ],
+      "CH_SRC": [
+        "FN-REG-12",
+        "FN-REG-13"
+      ],
+      "CH_DST": [
+        "FN-REG-14",
+        "FN-REG-15"
+      ],
+      "CH_SIZE": [
+        "FN-REG-16",
+        "FN-REG-17"
+      ],
+      "CH_CTRL": [
+        "FN-CTRL-04",
+        "FN-CTRL-05",
+        "FN-CTRL-06"
+      ],
+      "CH_CONFIG": [
+        "FN-CTRL-07",
+        "FN-CTRL-08"
+      ],
+      "CH_STATUS": [
+        "FN-CTRL-09",
+        "FN-REG-18",
+        "FN-REG-19"
+      ]
+    },
+    "security_test_map": {
+      "bounds_check": [
+        "T2_3: Gap 0x018",
+        "T2_4: Gap 0x080",
+        "T2_5: Beyond 0x200",
+        "T2_6: Misaligned 0x001"
+      ],
+      "buffer_overflow": [
+        "T5_1: SIZE=0 ERROR",
+        "T5_3: SIZE%width ERROR"
+      ],
+      "null_ptr_check": [
+        "T21_1a: streaming_width\u2260data_length error"
+      ]
+    }
+  }
+}
